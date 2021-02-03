@@ -1,0 +1,55 @@
+<html>
+    <head>
+        
+    </head>
+
+    <body>
+        <h1>Hello World!</h1>
+
+        <table id="actors">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Date of Birth</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script>
+            function getAllActors() {
+                axios.get('http://localhost:8080/api/actors/')
+                .then(
+                    function (response) {
+                        console.log('getAllActors() response=', response)
+                        const tbody = document.querySelector('#actors tbody')
+
+                        response.data.forEach((element) => {
+                            console.log('getAllActors() element', element)
+
+                            let row = `
+                            <tr>
+                                <td>${element.id}</td>
+                                <td>${element.firstName}</td>
+                                <td>${element.lastName}</td>
+                                <td>${element.dateOfBirth}</td>
+                            </tr>
+                            `;
+
+                            tbody.insertAdjacentHTML('beforeend', row)
+                        })
+                    }
+                )
+                .catch (
+                    function(err) {
+                        console.log(err);
+                    }
+                )
+            }
+            getAllActors();
+        </script>
+    </body>
+</html>
