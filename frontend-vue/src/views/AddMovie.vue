@@ -56,7 +56,7 @@
         <label class="label">Actors</label>
         <div class="control" v-for="actor in actors" :key="actor.id">
             <label :for="'actor-' + actor.id" class="checkbox">
-                <input type="checkbox" :id="'actor-' + actor.id" :value="actor.id" v-model="movie.actors" class="checkbox"/>
+                <input type="checkbox" :id="'actor-' + actor.id" :value="actor" v-model="movie.actors" class="checkbox"/>
                 {{actor.firstName}}{{actor.lastName}}
             </label>
         </div>
