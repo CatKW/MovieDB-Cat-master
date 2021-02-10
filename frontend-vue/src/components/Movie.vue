@@ -1,4 +1,3 @@
-
 <template>
      <div class="movie">
         <h2>{{ movie.Title}}</h2>
