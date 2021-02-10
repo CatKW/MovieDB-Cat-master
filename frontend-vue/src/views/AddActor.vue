@@ -20,7 +20,7 @@
             <div class="field">
             <label class="label">Date of Birth</label>
             <div class="control">
-                <input class="input" type="text" v-model="actor.dateOfBirth" placeholder="First Name"/>
+                <input class="input" type="text" v-model="actor.dateOfBirth" placeholder="YYYY-MM-DD"/>
             </div>
         </div>
 
