@@ -66,7 +66,7 @@
             <button @click="cancel" class="button">Cancel</button>
         </div>
         <div class="control">
-            <button @click="cancel" class="button is-primary">Save</button>
+            <button @click="save" class="button is-primary">Save</button>
         </div>
     </div>
    
@@ -95,7 +95,7 @@ export default {
     methods: {
         async save() {
             console.log('AddMovie.save() movie=', this.movie)
-            const response = await this.$http.post('http://localhost:8080/api/movies/', this.movie)
+            const response = await this.$http.post('http://localhost:8080/api/movies/', this.movie);
             console.log('AddMovie.save() response=', response);
         },
         cancel () {
@@ -119,6 +119,11 @@ export default {
         async getActors() {
             const {data} = await this.$http.get('http://localhost:8080/api/actors');
             console.log('getActors() data', data)
+            return data;
+        },
+        async getMovie() {
+            const data = await this.http.get("http://localhost:8080/api/movies");
+            console.log('getMovies data', data)
             return data;
         }
     },
