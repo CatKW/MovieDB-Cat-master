@@ -23,7 +23,7 @@
 <script>
 import Header from './Header.vue';
 import Search from './Search';
-import Movie from './Movie.vue';
+import Movie from './AMovie.vue';
 
 import {useMovieApi} from '../hooks/movie-api';
 

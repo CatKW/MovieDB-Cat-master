@@ -13,7 +13,7 @@
 <script>
 import {computed} from '@vue/composition-api';
 export default {
-    name: 'Movie',
+    name: 'AMovie',
     props: ['movie'],
     setup({ movie }) {
         const altText = computed(() => `The movie titled: ${movie.Title}`);

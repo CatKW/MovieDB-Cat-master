@@ -10,7 +10,7 @@ require("./assets/main.css");
 Vue.config.productionTip = false
 Vue.prototype.$http = axios
 Vue.prototype.moment = moment
-vue.use(VueCompositionAPI);
+Vue.use(VueCompositionAPI);
 
 
 new Vue({
